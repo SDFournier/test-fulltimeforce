@@ -1,5 +1,7 @@
 import axios from 'axios';
 import {useEffect, useState, useContext } from 'react';
+import Example from './Example.jsx';
+import logoFTF from "./assets/fulltimeforce-logo.png"
 
 function Home() {
 
@@ -47,13 +49,19 @@ function Home() {
 
     };
    
-    
-
-
-
-    
         return (
             <div>
+                <div className='headerContainer'>
+                    <img
+                        className='logoFullTimeForce'
+                        src={logoFTF}
+                        alt='logo FullTimeForce'
+                    />
+                    <h1>Prueba Técnica</h1>
+                </div>
+                <div>
+                    <Example />
+                </div>
             </div>
         )
     }
