@@ -34,7 +34,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 function AccordionCommits() {
 
-    const { commits, setCommits} = useContext(CommitsContext);
+    const [ commits, ] = useContext(CommitsContext);
 
     const reversedCommits = commits.map(function iterateItems(item) {
     return item; 

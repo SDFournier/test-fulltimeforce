@@ -1,16 +1,14 @@
 import axios from 'axios';
-import {useEffect, useState, useContext } from 'react';
+import {useEffect, useContext } from 'react';
 import AccordionCommits from "./AccordionCommits.jsx";
 import logoFTF from "./assets/fulltimeforce-logo.png"
 import {CommitsContext} from './helpers/CommitsContext.jsx';
 
 function Home() {
 
-    const { commits, setCommits} = useContext(CommitsContext);
+    const [ , setCommits] = useContext(CommitsContext);
 
-    useEffect(() => {
-        getCommits();
-        }, []);
+  
 
     //function to get the commit data
     const getCommits = async (info) => {
@@ -49,6 +47,11 @@ function Home() {
         return x;
 
     };
+
+    useEffect(() => {
+        getCommits();
+        // eslint-disable-next-line
+        }, []);
    
         return (
             <div>
