@@ -1,0 +1,42 @@
+.buttonHeader {
+    background-color: rgba(255,255,255,0.3) ;
+    width: 100%;
+    height: 100%;
+    padding: 0px!important;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+}
+.buttonHeader p {
+    margin: opx;    
+    padding:0px;
+    line-height: 0;
+}
+Accordion {
+    background-color: none!important;  
+}
+
+.card-body {
+    background-color: none!important;  
+}
+.card {
+    background-color: transparent!important;  
+    border: 1px solid rgba(255, 255, 255, 0.418)!important;
+}
+
+.card-header {
+    border: none!important;
+    padding: 0px!important;
+    height: 7vh;
+    
+}
+
+.linkButton {
+    border: 1px solid rgb(255, 255, 255)!important;
+    color: rgb(4, 91, 95)!important
+}
+
+         
+.accordionsContainer {
+    padding: 0vh 10vh 10vh 10vh;
+}

@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {callback, useContext} from 'react';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import {CommitsContext} from './helpers/CommitsContext.jsx';
+import './AccordionCommits.css';
 
 
 function ContextAwareToggle({ children, eventKey, callback }) {
