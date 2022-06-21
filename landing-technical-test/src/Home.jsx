@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {useEffect, useState, useContext } from 'react';
-import Example from './Example.jsx';
+import AccordionCommits from "./AccordionCommits.jsx";
 import logoFTF from "./assets/fulltimeforce-logo.png"
+import {CommitsContext} from './helpers/CommitsContext.jsx';
 
 function Home() {
 
@@ -60,7 +61,7 @@ function Home() {
                     <h1>Prueba Técnica</h1>
                 </div>
                 <div>
-                    <Example />
+                    <AccordionCommits />
                 </div>
             </div>
         )
