@@ -1,7 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
-import {callback, useContext} from 'react';
+import { useContext} from 'react';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import {CommitsContext} from './helpers/CommitsContext.jsx';
 import './AccordionCommits.css';
@@ -34,7 +34,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   );
 }
 
-function Example() {
+function AccordionCommits() {
 
     const { commits, setCommits} = useContext(CommitsContext);
 
@@ -47,12 +47,12 @@ function Example() {
         {reversedCommits?.map((commit, i) => (
          <div key={i}>
         
-            <Accordion  >
-           <Card >
+            <Accordion >
+           <Card>
                 <Card.Header >
-                  <ContextAwareToggle eventKey="0" > #{i+1}: {commit.message}</ContextAwareToggle>
+                  <ContextAwareToggle eventKey={i+1} > #{i+1}: {commit.message}</ContextAwareToggle>
                 </Card.Header>
-                 <Accordion.Collapse eventKey="0">
+                 <Accordion.Collapse eventKey={i+1}>
                  <Card.Body>
                     <ul>
                         <li>Author: {commit.author}</li>
@@ -79,4 +79,4 @@ function Example() {
 }
 
 
-export default Example;
+export default AccordionCommits;
