@@ -5,10 +5,13 @@ import logoFTF from "./assets/fulltimeforce-logo.png"
 import {CommitsContext} from './helpers/CommitsContext.jsx';
 
 function Home() {
+    // eslint-disable-next-line
+    const { commits, setCommits} = useContext(CommitsContext);
 
-    const [ , setCommits] = useContext(CommitsContext);
-
-  
+    useEffect(() => {
+        getCommits();
+        // eslint-disable-next-line
+        }, []);
 
     //function to get the commit data
     const getCommits = async (info) => {
@@ -47,11 +50,6 @@ function Home() {
         return x;
 
     };
-
-    useEffect(() => {
-        getCommits();
-        // eslint-disable-next-line
-        }, []);
    
         return (
             <div>

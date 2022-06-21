@@ -34,7 +34,8 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 function AccordionCommits() {
 
-    const [ commits, ] = useContext(CommitsContext);
+   // eslint-disable-next-line
+    const { commits, setCommits } = useContext(CommitsContext);
 
     const reversedCommits = commits.map(function iterateItems(item) {
     return item; 
