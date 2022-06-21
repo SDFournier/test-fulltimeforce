@@ -6,7 +6,7 @@ import axios from 'axios';
 export class CommitsService {
     getcommits() {
         const commits = axios
-          .get('https://api.github.com/repos/SDFournier/test-fulltimeforce/commits')
+          .get('https://api.github.com/repos/EliasBobadilla/fulltimeforce/commits')
           .then((data) => {
             return data.data;
           })

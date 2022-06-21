@@ -28,8 +28,6 @@ function ContextAwareToggle({ children, eventKey, callback }) {
       {children}
     </button>
    
-  
-    
   </>
   );
 }
