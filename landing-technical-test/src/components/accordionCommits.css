@@ -38,14 +38,13 @@
         -moz-transition: opacity 1s linear;
         -o-transition: opacity 1s linear;
 }
-        .container-comments-on {
-            background-color: green;
-
-        opacity: 1;
-        transition: opacity 1s linear;
-        -webkit-transition: opacity 1s linear;
-        -moz-transition: opacity 1s linear;
-        -o-transition: opacity 1s linear;
+.container-comments-on {
+background-color: green;
+opacity: 1;
+transition: opacity 1s linear;
+-webkit-transition: opacity 1s linear;
+-moz-transition: opacity 1s linear;
+-o-transition: opacity 1s linear;
       
 }
 .accordionsContainer {

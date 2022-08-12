@@ -29,14 +29,12 @@ function ContextAwareToggle({ children, eventKey, callback }) {
     >
       {children}
     </button>
-    
   </>
   );
 }
 
 function AccordionCommits() {
 
-   // eslint-disable-next-line
     const { commits, setCommits } = useContext(CommitsContext);
     const [ showComment, setShowComment ] = useState(false)
     const [ currentCommit, setCurrentCommit ] = useState(false)
@@ -49,16 +47,11 @@ function AccordionCommits() {
       setShowComment(!showComment);
       setCurrentCommit(i);
     }
-    useEffect(() => {
-      
-      console.log("commits", commits)
-      }, [commits]);
 
    return (
     <div className="accordionsContainer">
         {reversedCommits?.map((commit, i) => (
          <div key={i}>
-        
             <Accordion >
            <Card>
                 <Card.Header >
@@ -76,12 +69,8 @@ function AccordionCommits() {
                           <a href={commit.url} target="_blank" rel="noreferrer">
                             <button className="btnAction">Go to the commit in Github</button>
                           </a>  
-                          
                         </li>
-                       
-                        
                     </ul>
-                    
                     { !showComment && (currentCommit !== i) && <button className="btnAction" onClick={()=>{onChange(i)}}>Agregar Comentario</button>}
                     </Col>
                     {(currentCommit === i)&&( showComment  && <Col>

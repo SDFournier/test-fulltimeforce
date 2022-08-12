@@ -1,13 +1,6 @@
-import Accordion from 'react-bootstrap/Accordion';
-import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
-import { useContext, useState} from 'react';
-import AccordionContext from 'react-bootstrap/AccordionContext';
+import {  useState} from 'react';
 import './commentary.css';
-import { Col, Row, Container} from 'react-bootstrap';
-import Commentary from './Commentary.jsx'
-
-
 
 function CommentaryComponent({commit, setCommits, setCurrentCommit, currentCommit, setShowComment}) {
 
@@ -30,12 +23,10 @@ function CommentaryComponent({commit, setCommits, setCurrentCommit, currentCommi
         setShowComment(false);
         setCurrentCommit(null)
     }
-
    
    return (
     <div className="commentary__container">
            <Card className="commentary__card">
-                 
                  <Card.Body className="commentary__card-body ">
                   <textarea 
                     className="commentary_textarea"
@@ -48,13 +39,8 @@ function CommentaryComponent({commit, setCommits, setCurrentCommit, currentCommi
                   ></textarea>
                   <button className="btnAction" onClick={addComment}>Enviar</button>
                 </Card.Body>
-                 
              </Card>
-            
     </div>
-    
-
-    
   );
 }
 
