@@ -1,0 +1,38 @@
+.commentary__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.commentary__card{
+    background-color: rgba(170,170,200,0.7)!important;
+    height: 100%;
+    width: 100%;
+   
+}
+
+.commentary__card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.commentary_textarea {
+    width: 100%;
+    height:65%;
+}
+
+.commentary__btn {
+    display: block;
+    
+}
+
+textarea {
+    border-style: none;
+}
+
+textarea:focus {
+    outline: none!important;
+    box-shadow: 0 0 0 3px lightslategrey;
+}

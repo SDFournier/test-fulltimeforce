@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useEffect, useContext } from 'react';
-import AccordionCommits from "./AccordionCommits.jsx";
+import AccordionCommits from "./components/AccordionCommits.jsx";
 import logoFTF from "./assets/fulltimeforce-logo.png"
 import {CommitsContext} from './helpers/CommitsContext.jsx';
 
@@ -10,7 +10,7 @@ function Home() {
 
     useEffect(() => {
         getCommits();
-        // eslint-disable-next-line
+        
         }, []);
 
     //function to get the commit data
@@ -21,9 +21,9 @@ function Home() {
             "Content-Type": "application/json",
         },
         });
-        const pruebaMessages = getCommitsData(data.data);
-        pruebaMessages.forEach( commitObject => commitObject.date = changeFormatDate(commitObject.date));
-        setCommits(pruebaMessages);
+        const valuesCommits = getCommitsData(data.data);
+        valuesCommits.forEach( commitObject => commitObject.date = changeFormatDate(commitObject.date));
+        setCommits(valuesCommits);
     } catch (error) {
         console.log("There was an error. ", error.message);
         alert(error.message);
@@ -31,12 +31,13 @@ function Home() {
     };
 
     //gets the values we want from the api data
-    const getCommitsData = (pruebaArray = []) => {
-    const valuesCommits = pruebaArray.map((x) => ({
+    const getCommitsData = (filteredCommits = []) => {
+    const valuesCommits = filteredCommits.map((x) => ({
         message:x?.commit?.message, 
         author:x?.author?.login,
         url:x?.html_url,
         date:x?.commit?.committer?.date, 
+        commentaries: []
     }));
 
     return valuesCommits;
