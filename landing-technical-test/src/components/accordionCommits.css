@@ -30,6 +30,40 @@
     color: var(--btnAction);
 
 }
+.container-comments-off {
+    
+        background-color: green;
+        transition: opacity 1s linear;
+        -webkit-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+}
+        .container-comments-on {
+            background-color: green;
+
+        opacity: 1;
+        transition: opacity 1s linear;
+        -webkit-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+      
+}
 .accordionsContainer {
     padding: 0vh 10vh 10vh 10vh;
+}
+.accordion__comments{
+    padding-top: 20px;
+}
+
+.accordion__comments-title {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.accordion__comment {
+    border-top: solid 3px rgba(255,255,255,0.1);
+    font-size: 0.5rem;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
 }

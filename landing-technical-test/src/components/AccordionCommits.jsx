@@ -1,7 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
-import { useContext, useState} from 'react';
+import { useContext, useState, useEffect} from 'react';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import {CommitsContext} from '../helpers/CommitsContext.jsx';
 import './accordionCommits.css';
@@ -49,6 +49,10 @@ function AccordionCommits() {
       setShowComment(!showComment);
       setCurrentCommit(i);
     }
+    useEffect(() => {
+      
+      console.log("commits", commits)
+      }, [commits]);
 
    return (
     <div className="accordionsContainer">
@@ -72,26 +76,35 @@ function AccordionCommits() {
                           <a href={commit.url} target="_blank" rel="noreferrer">
                             <button className="btnAction">Go to the commit in Github</button>
                           </a>  
-                          {commit.commentaries?.map((comment, index) => (
-                            <div key={index}>
-                          <h1>{comment}</h1>
-                          <button>hogfhgfh</button>
-                            </div>
-                          ))}
+                          
                         </li>
+                       
                         
                     </ul>
-                    { !showComment && (currentCommit !== i) && <button className="btnAction"onClick={()=>{onChange(i)}}>Agregar Comentario</button>}
+                    
+                    { !showComment && (currentCommit !== i) && <button className="btnAction" onClick={()=>{onChange(i)}}>Agregar Comentario</button>}
                     </Col>
                     {(currentCommit === i)&&( showComment  && <Col>
-                    <Commentary currentCommit={currentCommit} setShowComment={setShowComment} setCommits={setCommits} commit={commits}/>
+                    <Commentary currentCommit={currentCommit} setShowComment={setShowComment} setCommits={setCommits} commit={commits} setCurrentCommit={setCurrentCommit}/>
                     </Col>)}
+                    </Row>
+                    <Row>
+                      <div className="accordion__comments">
+                    <p className="accordion__comments-title">Comentarios</p>
+                    {commit.commentaries?.map((comment, index) => (
+                          
+                      <div key={index}>
+                        
+                        <p className="accordion__comment">{comment}</p>
+                      </div>
+                        ))}
+                      </div>
                     </Row>
                     </Container>
                 </Card.Body>
                  </Accordion.Collapse>
              </Card>
-            
+           
              </Accordion>
            </div>
     

@@ -9,7 +9,7 @@ import Commentary from './Commentary.jsx'
 
 
 
-function CommentaryComponent({commit, setCommits, currentCommit, setShowComment}) {
+function CommentaryComponent({commit, setCommits, setCurrentCommit, currentCommit, setShowComment}) {
 
     const [ comment, setComment ] = useState({
         text: "",
@@ -20,17 +20,18 @@ function CommentaryComponent({commit, setCommits, currentCommit, setShowComment}
     }
 
     const addComment = () => {
-        console.log("commit", commit)
         let items = commit;
-        let item = {...items[currentCommit]};
+        //we get the index of the array to add the comment
+        let position = (items.length-1)-currentCommit;
+        let item = {...items[position]};
         item.commentaries.push(comment);
         items[currentCommit] = item;
         setCommits (items);
         setShowComment(false);
+        setCurrentCommit(null)
     }
 
    
-
    return (
     <div className="commentary__container">
            <Card className="commentary__card">
